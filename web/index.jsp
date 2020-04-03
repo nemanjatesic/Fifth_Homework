@@ -8,11 +8,11 @@
   </head>
   <body>
   <h3>Fifth Homework</h3>
+
   <%
     String key = request.getParameter("key");
     String value = request.getParameter("value");
     String scope = request.getParameter("scope");
-    String sessionID = session.getId();
 
     if (!(key == null || value == null || scope == null || key.equals("") || value.equals("") || scope.equals(""))){
       scope = scope.toLowerCase();
@@ -66,7 +66,7 @@
   <% if(session.getAttribute("list") != null) { %>
   <div style="background-color:orangered">
     Session Scope
-    <p>JSESSIONID je <%=session.getId()%> </p>
+    <p>JSESSIONID je <%=session.getId()%> <% %></p>
     <% List<Pair> pairs = (List<Pair>)session.getAttribute("list");
       for(Pair pair : pairs) { %>
     <p>Key : <%= pair.getKey() %> , Value : <%= pair.getValue() %></p>
